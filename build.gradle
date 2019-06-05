@@ -39,6 +39,8 @@ dependencies {
 
     testImplementation "org.amshove.kluent:kluent:1.48"
     testImplementation "org.mockito:mockito-core:2.19.0"
+    
+    testCompile 'ru.yandex.qatools.embed:postgresql-embedded:2.10'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
