@@ -24,6 +24,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 
     compile 'org.jetbrains.exposed:exposed:0.13.7'
+    compile "com.google.code.gson:gson:2.8.1"
     compile 'org.postgresql:postgresql:42.2.5'
     compile "org.eclipse.jetty:jetty-server:$jettyVersion"
     compile "org.eclipse.jetty:jetty-servlet:$jettyVersion"
@@ -32,6 +33,9 @@ dependencies {
     compile "org.glassfish.jersey.containers:jersey-container-jetty-servlet:$jerseyVersion"
     compile "org.glassfish.jersey.media:jersey-media-json-jackson:$jerseyVersion"
     compile "joda-time:joda-time:2.9.9"
+    compile "args4j:args4j:2.33"
+    compile 'org.apache.logging.log4j:log4j-core:2.11.1'
+    compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.11.1'
 
     testImplementation "org.amshove.kluent:kluent:1.48"
     testImplementation "org.mockito:mockito-core:2.19.0"
