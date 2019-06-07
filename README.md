@@ -4,3 +4,9 @@
  PG_USER
  PG_PASSWORD
 ```
+
+
+```batch
+ RE_HOST
+ RE_PORT
+```
