@@ -6,5 +6,6 @@ RUN     cd /home/message/src && \
         mv ./build/bin/*.jar .. && \
         cd .. && \
         rm -rf src && \
+        rm -rf /root/.gradle && \
         rm -rf /tmp/*
 CMD java -server -jar /home/message/MessageStore.jar
