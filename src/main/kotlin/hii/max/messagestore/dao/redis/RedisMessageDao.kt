@@ -6,7 +6,7 @@ import org.joda.time.DateTime
 import redis.clients.jedis.HostAndPort
 import redis.clients.jedis.Jedis
 
-class RedisMessageDao(jedisClusterNodes: Set<HostAndPort>) : MessageDao {
+class RedisMessageDao(jedisClusterNodes: Set<HostAndPort>, val expireSec: Int) : MessageDao {
     companion object {
         val logger by lazy { RedisMessageDao.getLogger() }
     }
@@ -16,6 +16,7 @@ class RedisMessageDao(jedisClusterNodes: Set<HostAndPort>) : MessageDao {
 
     override fun add(message: String) {
         jc.set(message, DateTime.now().toString())
+        jc.expire(message, expireSec)
     }
 
     override fun get(): Map<DateTime, String> {

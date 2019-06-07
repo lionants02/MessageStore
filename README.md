@@ -9,4 +9,5 @@
 ```batch
  RE_HOST
  RE_PORT
+ RE_EXPIRE_SEC
 ```

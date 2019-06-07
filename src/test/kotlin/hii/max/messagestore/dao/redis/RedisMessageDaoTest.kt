@@ -18,7 +18,7 @@ class RedisMessageDaoTest {
     fun setUp() {
         server = RedisServer.newRedisServer()
         server.start()
-        dao = RedisMessageDao(setOf(HostAndPort(server.host, server.bindPort)))
+        dao = RedisMessageDao(setOf(HostAndPort(server.host, server.bindPort)), 60)
     }
 
     @After

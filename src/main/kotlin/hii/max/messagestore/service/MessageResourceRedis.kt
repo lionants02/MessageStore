@@ -20,9 +20,10 @@ class MessageResourceRedis {
     companion object {
         private val host = System.getenv("RE_HOST")
         private val port = System.getenv("RE_PORT").toInt()
+        private val expireSec = System.getenv("RE_EXPIRE_SEC").toInt()
         private val logger = getLogger()
 
-        val messageDao: MessageDao by lazy { RedisMessageDao(setOf(HostAndPort(host, port))) }
+        val messageDao: MessageDao by lazy { RedisMessageDao(setOf(HostAndPort(host, port)), expireSec) }
     }
 
     @PUT
