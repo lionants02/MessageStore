@@ -85,7 +85,7 @@ jar {
     archiveName = "${project.name}.jar"
     destinationDir = file("$rootDir/build/bin")
 
-    manifest { attributes 'Main-Class': 'ffc.airsync.api.FFCApiServerKt' }
+    manifest { attributes 'Main-Class': 'hii.max.messagestore.MainKt' }
 
     exclude 'META-INF/*.RSA'
     exclude 'META-INF/*.SF'
