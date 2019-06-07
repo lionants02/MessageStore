@@ -6,9 +6,11 @@ import org.amshove.kluent.`should equal`
 import org.amshove.kluent.`should not contain`
 import org.junit.After
 import org.junit.Before
+import org.junit.Ignore
 import org.junit.Test
 import ru.yandex.qatools.embed.postgresql.EmbeddedPostgres
 
+@Ignore("ช้ามาก")
 class PostgresqlMessageDaoTest {
     val pgsql = EmbeddedPostgres()
     lateinit var dao: MessageDao
