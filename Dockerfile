@@ -1,11 +1,9 @@
-FROM openjdk:8-jdk-stretch
+FROM gradle
 COPY . /home/message/src/
 RUN     cd /home/message/src && \
-        ./gradlew build --refresh-dependencies --info && \
-        ./gradlew build --info && \
-        mv ./build/bin/*.jar .. && \
-        cd .. && \
-        rm -rf src && \
-        rm -rf /root/.gradle && \
-        rm -rf /tmp/*
+        gradle build --refresh-dependencies --info && \
+        gradle build --info && \
+        mv ./build/bin/*.jar ..
+FROM openjdk:8-jre-slim
+COPY --from=0 /home/message/MessageStore.jar /home/message/MessageStore.jar
 CMD java -server -jar /home/message/MessageStore.jar
